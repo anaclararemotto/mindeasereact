@@ -1,0 +1,50 @@
+@use './variables' as vars;
+
+//Breakpoints
+$breakpoints: (
+    sm: 480px,
+    md: 768px,
+    lg: 1024,
+    xl:1280px
+);
+
+//responsive
+@mixin responsive($size) {
+    @media (min-width: map-get($breakpoints, $size)){
+        @content;
+    }
+}
+
+//flex-center
+@mixin flex-center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+//flex-between
+@mixin flex-between{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+//focus-ring
+@mixin focus-ring {&:focus-visible {
+    outline: 2px solid #4966CC;
+}}
+
+//header
+@mixin header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+}
+
+//body
+@mixin body{
+    padding: 10px 30px;
+}
+
+
