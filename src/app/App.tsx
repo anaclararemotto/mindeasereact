@@ -129,7 +129,7 @@ function App() {
                 bgColor="matematica"
               />
             </div>
-            
+
           </div>
           <div className={styles["main__section-default__column-subject"]}>
             <div
@@ -148,29 +148,44 @@ function App() {
                 bgColor="geografia"
               />
             </div>
-            
+
           </div>
         </section>
         <section className={styles["main__section-default"]}>
           <div className={styles["main__section-default__title-icon"]}>
-            <Trophy size={24} className={styles["main__section-default__title-icon__icon"]}/>
+            <Trophy size={24} className={styles["main__section-default__title-icon__icon"]} />
             <h2 className={styles["main__section-default__title-icon__title"]}>
-            Suas conquistas celebradas.
-          </h2>
+              Suas conquistas celebradas.
+            </h2>
           </div>
           <p className={styles["main__section-default__paragraph"]}>
             Acompanhe sua evolução de forma clara e visual. o MindEase oferece ferramentas que respeitam a forma como sua mente processa o mundo, garantindo que o foco esteja sempre no que importa: você.
           </p>
 
           <h2 className={styles["main__section-default__subtitle"]}>
-            Personalização de cores:
+            Pronto para começar?
           </h2>
           <p className={styles["main__section-default__paragraph"]}>
             Vamos construir juntos uma rotina de estudos mais tranquila e eficiente.
           </p>
-          <Button label="Vamos começar com calma?"/>
+          <Button label="Vamos começar com calma?" />
         </section>
       </main>
+      <footer className={styles["footer"]}>
+        <h1 className={styles["footer__brand"]}>MindEase</h1>
+        <div className={styles["footer__line"]}>
+          <div className={styles["footer__line__column"]}>
+            <a className={styles["footer__line__column__link"]} href="#">Funcionalidades</a>
+            <a className={styles["footer__line__column__link"]} href="#">Sobre nós</a>
+            <a className={styles["footer__line__column__link"]} href="#">Ajuda</a>
+          </div>
+          <div className={styles["footer__line__column"]}>
+            <p><b className={styles["footer__line__column__bold"]}>Instagram:</b> @mindease</p>
+            <p><b className={styles["footer__line__column__bold"]}>Email:</b> mindease@mail.com</p>
+            <p><b className={styles["footer__line__column__bold"]}>SAC:</b> 0800 1235 5678</p>
+          </div>
+        </div>
+      </footer>
     </>
   );
 }
