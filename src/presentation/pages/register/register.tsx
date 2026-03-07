@@ -16,7 +16,7 @@ function Register() {
                     <Input type="date" placeholder="Digite sua data de nascimento" />
                     <Input type="password" placeholder="Confirme sua senha" />
                     <Input type="password" placeholder="Digite sua senha" />
-                    <Button label="Cadastrar" />
+                    <Button label="Cadastrar" to="/login" />
                 </div>
                 <div className={styles["container__button"]}>
                     <Button label="Já possui uma conta? Login" transparent={true} to="/login"/>
