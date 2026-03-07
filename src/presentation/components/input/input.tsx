@@ -13,9 +13,16 @@ const iconMap: Record<InputType | 'confirmPassword', React.ReactNode> = {
 
 export const Input: React.FC<InputProps> = ({ type = 'text', confirmPassword, ...props } : InputProps) => {
   const [showPassword, setShowPassword] = useState(false);
+  const [isDateFocused, setIsDateFocused] = useState(false);
 
-  const inputType = type === 'password' && showPassword ? 'text' : type;
-  
+let inputType: string = type;
+
+  if (type === 'password') {
+    inputType = showPassword ? 'text' : 'password';
+  } else if (type === 'date') {
+    inputType = isDateFocused || props.value ? 'date' : 'text';
+  }
+
   const MainIcon = confirmPassword && type === 'password' ? iconMap.confirmPassword : iconMap[type];
 
   return (
@@ -25,6 +32,14 @@ export const Input: React.FC<InputProps> = ({ type = 'text', confirmPassword, ..
       <input 
         className={styles.field} 
         type={inputType} 
+        onFocus={(e) => {
+          setIsDateFocused(true);
+          props.onFocus?.(e);
+        }}
+        onBlur={(e) => {
+          setIsDateFocused(false);
+          props.onBlur?.(e);
+        }}
         {...props} 
       />
 

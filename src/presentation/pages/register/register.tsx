@@ -13,6 +13,7 @@ function Register() {
                 <div className={styles["container__input"]} >
                     <Input type="text" placeholder="Digite seu nome" />
                     <Input type="email" placeholder="Digite seu email" />
+                    <Input type="date" placeholder="Digite sua data de nascimento" />
                     <Input type="password" placeholder="Confirme sua senha" />
                     <Input type="password" placeholder="Digite sua senha" />
                     <Button label="Cadastrar" />
