@@ -12,7 +12,7 @@ function App() {
     <>
       <header className={styles["header"]}>
         <h1 className={styles["header__brand"]}>MindEase</h1>
-        <Button label="Login" />
+        <Button label="Login" to="/login" />
       </header>
 
       <main className={styles["main"]}>
