@@ -1,0 +1,43 @@
+.inputContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+  .mainIcon {
+    position: absolute;
+    left: 12px;
+    color: #94a3b8;
+    display: flex;
+    pointer-events: none;
+  }
+
+  .field {
+    width: 100%;
+    padding: 12px 40px 12px 40px; 
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    font-size: 14px;
+    outline: none;
+
+    &:focus {
+      border-color: var(--color-primary);
+    }
+  }
+
+  .eyeButton {
+    position: absolute;
+    right: 12px;
+    background: none;
+    border: none;
+    color: #94a3b8;
+    cursor: pointer;
+    display: flex;
+    padding: 0;
+    transition: color 0.2s;
+
+    &:hover {
+      color: #64748b;
+    }
+  }
+}
