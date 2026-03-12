@@ -9,7 +9,7 @@ export class SignupUseCase {
 
   async execute(data: {
     name: string;
-    birthDate: string;
+    birthDate: Date;
     email: string;
     password: string;
   }) {

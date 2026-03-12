@@ -7,8 +7,8 @@ import { Input } from "@presentation/components/input/input";
 
 import styles from "./login.styles.module.scss";
 import { AUTH_ERRORS } from "@domain/constants/AuthErrors";
-import { FirebaseAuthRepository } from "@infrastructure/firebase/FirebaseAuthRepository";
-import { LoginUseCase } from "@application/usecases/LoginUseCase";
+import { FirebaseAuthRepository } from "../../../infrastructure/firebase/FirebaseAuthRepository";
+import { LoginUseCase } from "../../../application/usecases/LoginUseCase";
 
 function Login() {
   const navigate = useNavigate();

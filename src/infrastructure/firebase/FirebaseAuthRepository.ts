@@ -15,7 +15,7 @@ export class FirebaseAuthRepository implements AuthRepository {
     password,
   }: {
     name: string;
-    birthDate: string;
+    birthDate: Date;
     email: string;
     password: string;
   }): Promise<void> {

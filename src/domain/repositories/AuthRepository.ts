@@ -3,7 +3,7 @@ export interface AuthRepository {
 
   signup(data: {
     name: string;
-    birthDate: string;
+    birthDate: Date;
     email: string;
     password: string;
   }): Promise<void>;
