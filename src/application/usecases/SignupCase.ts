@@ -1,11 +1,15 @@
 import type { AuthRepository } from "@domain/repositories/AuthRepository";
 
 export class SignupUseCase {
-  constructor(private authRepository: AuthRepository) {}
+  private authRepository: AuthRepository;
+
+  constructor(authRepository: AuthRepository) {
+    this.authRepository = authRepository;
+  }
 
   async execute(data: {
     name: string;
-    birthDate: string;
+    birthDate: Date;
     email: string;
     password: string;
   }) {

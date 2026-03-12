@@ -8,9 +8,9 @@ import styles from "./signup.styles.module.scss";
 import { AUTH_MESSAGES } from "@domain/constants/AuthMessages";
 import { AUTH_ERRORS } from "@domain/constants/AuthErrors";
 import { FIREBASE_AUTH_ERRORS } from "@domain/constants/FirebaseErrors";
-import { SignupUseCase } from "@application/usecases/SignupCase";
 
-import { FirebaseAuthRepository } from "@infrastructure/firebase/FirebaseAuthRepository";
+import { SignupUseCase } from "../../../application/usecases/SignupCase";
+import { FirebaseAuthRepository } from "../../../infrastructure/firebase/FirebaseAuthRepository";
 
 function Signup() {
   const navigate = useNavigate();
