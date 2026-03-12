@@ -13,7 +13,7 @@ function Login() {
                 <div className={styles["container__input"]} >
                     <Input type="email" placeholder="Digite seu email" />
                     <Input type="password" placeholder="Digite sua senha" />
-                    <Button label="Entrar" />
+                    <Button label="Entrar" to="/home"/>
                 </div>
                 <div className={styles["container__buttons"]}>
                     <Button label="Esqueci minha senha" transparent={true} />
