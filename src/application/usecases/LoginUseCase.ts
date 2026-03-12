@@ -1,7 +1,11 @@
 import type { AuthRepository } from "@domain/repositories/AuthRepository";
 
 export class LoginUseCase {
-  constructor(private authRepository: AuthRepository) {}
+  private authRepository: AuthRepository;
+
+  constructor(authRepository: AuthRepository) {
+    this.authRepository = authRepository;
+  }
 
   async execute(email: string, password: string) {
     if (!email || !password) {
