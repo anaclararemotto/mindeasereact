@@ -1,0 +1,38 @@
+@use "../../../app/styles/mixins" as *;
+@use "../../../app/styles/abstract/variables" as *;
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 0.75rem;
+  border-radius: 1rem;
+  border: none;
+  background-color: var(--color-primary);
+  color: $white;
+  @include text-body-medium;
+  cursor: pointer;
+  justify-content: center;
+  min-height: 44px;
+
+  &:hover {
+    opacity: 0.9;
+  }
+
+  &--transparent {
+    background-color: transparent;
+    color: var(--color-text);
+    text-decoration: underline;
+    padding: 10px 0;
+    justify-content: start;
+  }
+
+  &--disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  svg {
+    flex-shrink: 0;
+  }
+}

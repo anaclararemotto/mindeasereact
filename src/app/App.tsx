@@ -1,12 +1,10 @@
-
+import "./app.styles.module.scss";
 
 function App() {
-
   return (
     <>
-      <h1>MindEase</h1>
     </>
-  )
+  );
 }
 
 export default App;

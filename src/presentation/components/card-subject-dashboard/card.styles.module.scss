@@ -1,0 +1,19 @@
+@use "../../../app/styles/mixins" as *;
+@use "../../../app/styles/abstract/variables" as *;
+
+.card {
+  background-color: var(--card-bg, $color-background);
+  border-radius: 0.75rem;
+  padding: 0.625rem;
+  display: flex;
+  gap: 0.3125rem;
+  align-items: center;
+  color: $gray600;
+
+  &__line {
+    width: 1px;
+    align-self: stretch;
+    background-color: $gray300;
+    border-radius: 2px;
+  }
+}

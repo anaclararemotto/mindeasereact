@@ -7,6 +7,20 @@ $color-text: var(--color-text);
 $color-border: var(--color-border);
 $color-title: var(--color-title);
 
+$white: #ffffff;
+$gray100: #eeeeee;
+$gray200: #dcdcdc;
+$gray300: #8f8f8f;
+$gray400: #727272;
+$gray500: #565656;
+$gray600: #323232;
+
 $color-success: #027a01;
 $color-error: #7a0101;
 $color-warning: #bdb603;
+
+$font-base:
+  "Poppins",
+  system-ui,
+  -apple-system,
+  sans-serif;
