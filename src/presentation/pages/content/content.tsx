@@ -1,7 +1,8 @@
 import { CardScheedule } from "@presentation/components/card-schedule/card-schedule";
 import { Header } from "@presentation/components/header/header";
-import { AlarmClock, ChevronRight } from "lucide-react";
+import { AlarmClock, ChevronRight, Hourglass, LibraryBig, Newspaper } from "lucide-react";
 import styles from "./content.styles.module.scss"
+import { CardOption } from "@presentation/components/card-option-content.styles.module.scss/card-option-content";
 
 function Content() {
 
@@ -26,6 +27,9 @@ function Content() {
                         <CardScheedule type="Revisão" hour="7:00" date="25/03/2026" matter="Matemática" priority="medium" />
                     </div>
                 </div>
+                <CardOption icon={LibraryBig} label="Conteúdo" href="/matters" description="Escolha o conteúdo e avance no estudo."/>
+                <CardOption icon={Hourglass} label="Timer/Modo Foco" description="Hora de focar e estudar com intenção."/>
+                <CardOption icon={Newspaper} label="Newsletter" description="Fique por dentro das atualidades."/>
             </main>
         </>
     );
