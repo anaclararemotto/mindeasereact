@@ -18,7 +18,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
       <aside className={`${styles.sidebar} ${isOpen ? styles.open : ''}`}>
         <nav className={styles.nav}>
           <a href="/"><Home size={20} /> Início</a>
-          <a href="/materias"><BookOpen size={20} /> Matérias</a>
+          <a href="/matters"><BookOpen size={20} /> Matérias</a>
           <a href="/content"><LibraryBig size={20} /> Conteúdos</a>
           <a href="/perfil"><User size={20} /> Meu Perfil</a>
           <a href="/config"><Settings size={20} /> Configurações</a>

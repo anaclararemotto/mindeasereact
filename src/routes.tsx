@@ -2,6 +2,7 @@
 import App from '@app/App';
 import Home from '@presentation/pages/home/home';
 import Login from '@presentation/pages/login/login';
+import Matters from '@presentation/pages/matters/matters';
 import Register from '@presentation/pages/register/register';
 import { createBrowserRouter } from 'react-router-dom';
 // Importe suas páginas/templates aqui
@@ -23,5 +24,9 @@ export const router = createBrowserRouter([
   {
     path: "/home",
     element: <Home/>
+  },
+  {
+    path: "/matters",
+    element: <Matters/>
   },
 ]);
