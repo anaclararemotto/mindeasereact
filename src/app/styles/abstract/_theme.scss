@@ -1,0 +1,211 @@
+/* =========================
+   DEFAULT (INDIGO)
+   ========================= */
+:root {
+  --color-primary: #4966cc;
+  --color-secondary: #E6ECFF;
+  --color-background: #ffffff;
+  --color-text: #000000;
+  --color-border: #374C99;
+   --color-title-alternative: #374C99;
+}
+
+/* =========================
+   DARK GREEN 
+   ========================= */
+[data-theme="dark-green"] {
+  --color-primary: #0f4604;
+  --color-secondary: #93ac8e;
+  --color-background: #ffffff;
+  --color-text: #000000;
+  --color-border: #0d3c03;
+   --color-title-alternative: #051901;
+}
+
+/* =========================
+   LIGHT GREEN
+   ========================= */
+[data-theme="light-green"] {
+  --color-primary: #499c45;
+  --color-secondary: #add2ab;
+  --color-background: #ffffff;
+  --color-text: #000;
+  --color-border: #3E853B;
+   --color-title-alternative: #1A3718;
+}
+/* =========================
+   CIAN
+   ========================= */
+[data-theme="cian"] {
+  --color-primary: #3BCFB1;
+  --color-secondary: #a7e9dc;
+  --color-background: #ffffff;
+  --color-text: #000;
+  --color-border: #32B096;
+   --color-title-alternative: #15483E;
+}
+/* =========================
+   TURQUOISE
+   ========================= */
+[data-theme="turquoise"] {
+  --color-primary: #3BAFCF;
+  --color-secondary: #a7dbe9;
+  --color-background: #ffffff;
+  --color-text: #000;
+  --color-border: #3295B0;
+   --color-title-alternative: #153D48;
+}
+/* =========================
+   LIGHT BLUE
+   ========================= */
+[data-theme="light-blue"] {
+  --color-primary: #006ACD;
+  --color-secondary: #8cbce9;
+  --color-background: #ffffff;
+  --color-text: #000;
+  --color-border: #005AAE;
+   --color-title-alternative: #001B33;
+}
+/* =========================
+   DARK BLUE
+   ========================= */
+[data-theme="dark-blue"] {
+  --color-primary: #0736ad;
+  --color-secondary: #8fa5da;
+  --color-background: #ffffff;
+  --color-text: #000;
+  --color-border: #062e93;
+   --color-title-alternative: #02133d;
+}
+/* =========================
+   PURPLE
+   ========================= */
+[data-theme="purple"] {
+  --color-primary: #5c26ff;
+  --color-secondary: #b69dff;
+  --color-background: #ffffff;
+  --color-text: #000;
+  --color-border: #4e20d9;
+   --color-title-alternative: #200d59;
+}
+/* =========================
+   LAVANDER
+   ========================= */
+[data-theme="lavander"] {
+  --color-primary: #bba6e7;
+  --color-secondary: #d0c1ee;
+  --color-background: #ffffff;
+  --color-text: #000;
+  --color-border: #9776da;
+   --color-title-alternative: #6e569f;
+}
+/* =========================
+   LIGHT PINK
+   ========================= */
+[data-theme="light-pink"] {
+  --color-primary: #d776b0;
+  --color-secondary: #edc1db;
+  --color-background: #ffffff;
+  --color-text: #000;
+  --color-border: #b76496;
+   --color-title-alternative: #9d5680;
+}
+/* =========================
+   PINK
+   ========================= */
+[data-theme="pink"] {
+  --color-primary: #cf3b94;
+  --color-secondary: #e9a7cf;
+  --color-background: #ffffff;
+  --color-text: #000;
+  --color-border: #b0327e;
+   --color-title-alternative: #972b6c;
+}
+/* =========================
+   DARK PINK
+   ========================= */
+[data-theme="dark-pink"] {
+  --color-primary: #a5126b;
+  --color-secondary: #d794bc;
+  --color-background: #ffffff;
+  --color-text: #000;
+  --color-border: #8c0f5b;
+   --color-title-alternative: #780d4e;
+}
+/* =========================
+   RED
+   ========================= */
+[data-theme="red"] {
+  --color-primary: #890101;
+  --color-secondary: #ca8d8d;
+  --color-background: #ffffff;
+  --color-text: #000;
+  --color-border: #740101;
+   --color-title-alternative: #640101;
+}
+/* =========================
+   BEIGE
+   ========================= */
+[data-theme="beige"] {
+  --color-primary: #d8b262;
+  --color-secondary: #eddcb8;
+  --color-background: #ffffff;
+  --color-text: #000;
+  --color-border: #b89753;
+   --color-title-alternative: #9e8248;
+}
+/* =========================
+   YELLOW
+   ========================= */
+[data-theme="yellow"] {
+  --color-primary: #ea9306;
+  --color-secondary: #f6ce8f;
+  --color-background: #ffffff;
+  --color-text: #000;
+  --color-border: #ab6b04;
+   --color-title-alternative: #ab6b04;
+}
+/* =========================
+   ORANGE
+   ========================= */
+[data-theme="orange"] {
+  --color-primary: #e35204;
+  --color-secondary: #f2b18e;
+  --color-background: #ffffff;
+  --color-text: #000;
+  --color-border: #c14603;
+   --color-title-alternative: #a63c03;
+}
+/* =========================
+   BROWN
+   ========================= */
+[data-theme="brown"] {
+  --color-primary: #893b0a;
+  --color-secondary: #caa791;
+  --color-background: #ffffff;
+  --color-text: #000;
+  --color-border: #743209;
+   --color-title-alternative: #642b07;
+}
+/* =========================
+   COLD BROWN 
+   ========================= */
+[data-theme="cold-brown"] {
+  --color-primary: #68432f;
+  --color-secondary: #bbaaa1;
+  --color-background: #ffffff;
+  --color-text: #000;
+  --color-border: #4c3122;
+   --color-title-alternative: #4c3122;
+}
+/* =========================
+   DARK BROWN
+   ========================= */
+[data-theme="dark-brown"] {
+  --color-primary: #582b13;
+  --color-secondary: #b4a095;
+  --color-background: #ffffff;
+  --color-text: #000;
+  --color-border: #4b2510;
+   --color-title-alternative: #4b2510;
+}

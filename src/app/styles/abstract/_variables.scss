@@ -1,0 +1,33 @@
+/* =========================
+   SEMANTIC TOKENS
+   ========================= */
+$color-primary: var(--color-primary);
+$color-background: var(--color-background);
+$color-secondary: var(--color-secondary);
+$color-text: var(--color-text);
+$color-border: var(--color-border);
+$color-title: var(--color-title-alternative);
+
+$white: #ffffff;
+$gray100: #eeeeee;
+$gray200: #dcdcdc;
+$gray300: #8f8f8f;
+$gray400: #727272;
+$gray500: #565656;
+$gray600: #323232;
+$black: #000000;
+
+$color-success: #027a01;
+$color-error: #7a0101;
+$color-warning: #bdb603;
+
+$font-base:
+  "Poppins",
+  system-ui,
+  -apple-system,
+  sans-serif;
+
+  //shadows
+$shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.08);
+$shadow-md: 0 6px 16px rgba(0, 0, 0, 0.12);
+$shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.18);
