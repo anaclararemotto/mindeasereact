@@ -11,7 +11,6 @@ export const ContinueStudyingCard: React.FC<ContinueStudyingCardProps & { isFirs
   onClick,
 }) => {
   
-  // Se for primeiro acesso, usamos a imagem. Se não, o iframe do YouTube.
   const renderMedia = () => {
     if (isFirstAccess || !youtubeVideoId) {
       return <img src={studyingImg} alt="Ilustração de estudo" className={styles.thumb} />;

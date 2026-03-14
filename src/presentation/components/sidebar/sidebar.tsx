@@ -1,5 +1,5 @@
 import React from 'react';
-import { Home, User, BookOpen, Settings, LogOut, LibraryBig } from 'lucide-react';
+import { Home, User, BookOpen, LogOut, LibraryBig } from 'lucide-react';
 import styles from './sidebar.styles.module.scss';
 
 interface SidebarProps {
@@ -17,11 +17,10 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
 
       <aside className={`${styles.sidebar} ${isOpen ? styles.open : ''}`}>
         <nav className={styles.nav}>
-          <a href="/"><Home size={20} /> Início</a>
+          <a href="/home"><Home size={20} /> Início</a>
           <a href="/matters"><BookOpen size={20} /> Matérias</a>
           <a href="/content"><LibraryBig size={20} /> Conteúdos</a>
-          <a href="/perfil"><User size={20} /> Meu Perfil</a>
-          <a href="/config"><Settings size={20} /> Configurações</a>
+          <a href="/profile"><User size={20} /> Meu Perfil</a>
           <hr style={{ border: '0.5px solid #e2e8f0', width: '100%' }} />
           <a href="/sair" style={{ color: '#ef4444' }}><LogOut size={20} /> Sair</a>
         </nav>

@@ -1,0 +1,10 @@
+@use "../../../app/styles/mixins" as *;
+@use "../../../app/styles/abstract/variables" as *;
+@use "../../../app/styles/abstract/theme" as *;
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    @include body-primary;    
+}
