@@ -1,4 +1,5 @@
 import App from '@app/App';
+import Challenge from '@presentation/pages/challenge/challenge';
 import Content from '@presentation/pages/content/content';
 import Home from '@presentation/pages/home/home';
 import Login from '@presentation/pages/login/login';
@@ -28,7 +29,13 @@ export const router = createBrowserRouter([
     element: <Content/>
   },
   {
-    path: "/profile",
+   
+    path: "/challenge",
+    element: <Challenge />
+  },
+
+  {
+     path: "/profile",
     element: <Profile/>
   },
 ]);
