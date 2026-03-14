@@ -1,29 +1,42 @@
 import { useState } from "react";
 import { Header } from "@presentation/components/header/header";
-import { ChevronLeft } from "lucide-react";
+import { ChevronLeft, Eye, ChevronRight, RotateCcw } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import styles from "./challenge.styles.module.scss";
 import MoleculaImg from "../../../assets/molecula-desafio.svg";
 
 const mockQuestion = {
-  title: "Qual é a estrutura da molécula abaixo?",
+  textApoio: "A fórmula H2O indica que a água é composta por:",
   image: MoleculaImg,
   options: [
-    { id: "a", text: "Opção A" },
-    { id: "b", text: "Opção B" },
-    { id: "c", text: "Opção C" },
-    { id: "d", text: "Opção D" },
+    { id: "a", text: "Dois átomos de hidrogênio e um de oxigênio" },
+    { id: "b", text: "Dois átomos de oxigênio e um de hidrogênio" },
+    { id: "c", text: "Apenas hidrogênio" },
+    { id: "d", text: "Apenas oxigênio" },
   ],
-  correctAnswer: "b",
+  correctAnswer: "a", // A opção A é a correta
 };
 
 function Challenge() {
   const navigate = useNavigate();
   const [selected, setSelected] = useState<string | null>(null);
-  const [isAnswered, setIsAnswered] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [showFinalResult, setShowFinalResult] = useState(false);
 
-  const handleCheck = () => {
-    if (selected) setIsAnswered(true);
+  // Estados para controlar a abertura dos conteúdos extras (Acordeões)
+  const [showSupportText, setShowSupportText] = useState(false);
+  const [showResolution, setShowResolution] = useState(false);
+  const [showStudyTips, setShowStudyTips] = useState(false);
+
+  const isCorrect = selected === mockQuestion.correctAnswer;
+
+  const handleTryAgain = () => {
+    setSelected(null);
+    setIsSubmitted(false);
+    setShowFinalResult(false);
+    setShowResolution(false);
+    setShowStudyTips(false);
+    setShowSupportText(false);
   };
 
   return (
@@ -35,70 +48,187 @@ function Challenge() {
         </button>
 
         <section className={styles.card}>
-          <h2 className={styles.card__title}>{mockQuestion.title}</h2>
+          {!showFinalResult ? (
+            <>
+              {/* Texto de Apoio Interativo */}
+              <div
+                className={styles.supportTextContainer}
+                onClick={() => setShowSupportText(!showSupportText)}
+              >
+                <span>Texto de apoio</span>
+                <ChevronRight
+                  className={
+                    showSupportText ? styles.rotateIcon : styles.iconBlue
+                  }
+                  size={18}
+                />
+              </div>
 
-          <div className={styles.card__imagePlaceholder}>
-            <img src={mockQuestion.image} alt="Desafio Químico" />
-          </div>
+              {showSupportText && (
+                <div className={styles.supportTextContent}>
+                  <p>
+                    As fórmulas químicas mostram a composição das substâncias.
+                    As letras indicam os elementos e os números (índices)
+                    indicam a quantidade de cada átomo. Quando não há número,
+                    entende-se que há apenas 1 átomo presente.
+                  </p>
+                </div>
+              )}
 
-          <div className={styles.card__options}>
-            {mockQuestion.options.map((opt, index) => {
-              // Lógica para definir a classe de cor baseada no estado
-              let stateClass = "";
-              if (selected === opt.id)
-                stateClass = styles["card__optionBtn--selected"];
+              <div className={styles.card__imagePlaceholder}>
+                <img src={mockQuestion.image} alt="Molécula" />
+              </div>
 
-              if (isAnswered) {
-                if (opt.id === mockQuestion.correctAnswer) {
-                  stateClass = styles["card__optionBtn--correct"];
-                } else if (selected === opt.id) {
-                  stateClass = styles["card__optionBtn--wrong"];
-                }
-              }
+              <p className={styles.questionText}>{mockQuestion.textApoio}</p>
 
-              return (
+              <div className={styles.card__options}>
+                {mockQuestion.options.map((opt, index) => (
+                  <label
+                    key={opt.id}
+                    className={`${styles.optionLabel} ${selected === opt.id ? styles.selected : ""}`}
+                  >
+                    <input
+                      type="radio"
+                      name="quiz"
+                      disabled={isSubmitted}
+                      onChange={() => setSelected(opt.id)}
+                      checked={selected === opt.id}
+                      className={styles.radioInput}
+                    />
+                    <span className={styles.optionContent}>
+                      {String.fromCharCode(97 + index)}) {opt.text}
+                    </span>
+                  </label>
+                ))}
+              </div>
+
+              {!isSubmitted ? (
                 <button
-                  key={opt.id}
-                  disabled={isAnswered}
-                  className={`${styles.card__optionBtn} ${stateClass}`}
-                  onClick={() => setSelected(opt.id)}
+                  className={styles.responderBtn}
+                  disabled={!selected}
+                  onClick={() => setIsSubmitted(true)}
                 >
-                  <span className={styles.card__optionLetter}>
-                    {String.fromCharCode(65 + index)}
-                  </span>
-                  {opt.text}
+                  Responder
                 </button>
-              );
-            })}
-          </div>
-
-          {!isAnswered ? (
-            <button
-              className={styles.card__submitBtn}
-              disabled={!selected}
-              onClick={handleCheck}
-            >
-              Verificar Resposta
-            </button>
+              ) : (
+                <button
+                  className={styles.verResultadoBtn}
+                  onClick={() => setShowFinalResult(true)}
+                >
+                  <Eye size={18} /> Ver Resultado <ChevronRight size={18} />
+                </button>
+              )}
+            </>
           ) : (
-            <div className={styles.feedback}>
-              <p
-                className={
-                  selected === mockQuestion.correctAnswer
-                    ? styles.feedback__success
-                    : styles.feedback__error
-                }
-              >
-                {selected === mockQuestion.correctAnswer
-                  ? "✨ Parabéns! Você acertou."
-                  : "❌ Não foi dessa vez. Estude mais um pouco!"}
-              </p>
+            /* TELA DE RESULTADO FINAL */
+            <div className={styles.finalResult}>
+              <p className={styles.labelHeader}>Você marcou a alternativa:</p>
+              <h1 className={styles.bigLetter}>{selected?.toUpperCase()}</h1>
+
+              <div className={styles.statusContainer}>
+                <p>Alternativas mais marcadas:</p>
+                <div className={styles.letterCircles}>
+                  {["a", "b", "c", "d"].map((letter) => (
+                    <div
+                      key={letter}
+                      className={`${styles.circle} ${letter === mockQuestion.correctAnswer ? styles.correctCircle : letter === selected ? styles.wrongCircle : ""}`}
+                    >
+                      {letter.toUpperCase()}
+                    </div>
+                  ))}
+                </div>
+                <div className={styles.legend}>
+                  <span>
+                    <i className={styles.dotGreen}></i> Alternativa correta
+                  </span>
+                  <span>
+                    <i className={styles.dotRed}></i> Alternativa incorreta
+                  </span>
+                </div>
+              </div>
+
+              {/* Botão de Resolução */}
               <button
-                onClick={() => navigate("/home")}
-                className={styles.card__submitBtn}
+                className={styles.accordionBtn}
+                onClick={() => setShowResolution(!showResolution)}
               >
-                Continuar
+                Resolução{" "}
+                <ChevronRight
+                  className={showResolution ? styles.rotateIcon : ""}
+                  size={18}
+                />
               </button>
+              {showResolution && (
+                <div className={styles.accordionContent}>
+                  <p>
+                    A análise da fórmula química <strong>H₂O</strong> nos mostra
+                    que: <br />O <strong>H</strong> (Hidrogênio) tem o número 2,
+                    indicando dois átomos. <br />
+                    <strong>O</strong> (Oxigênio) não possui número, indicando
+                    apenas um átomo.
+                  </p>
+                </div>
+              )}
+
+              {/* Botão de Recomendação de Estudo */}
+              <button
+                className={styles.accordionBtn}
+                onClick={() => setShowStudyTips(!showStudyTips)}
+              >
+                Recomendação de estudo{" "}
+                <ChevronRight
+                  className={showStudyTips ? styles.rotateIcon : ""}
+                  size={18}
+                />
+              </button>
+              {showStudyTips && (
+                <div className={styles.accordionContent}>
+                  <h4 className={styles.videoTitle}>
+                    Vídeo: Geometria da Água
+                  </h4>
+                  <div className={styles.videoWrapper}>
+                    <iframe
+                      src="https://www.youtube.com/embed/kOO40xchDWI"
+                      title="Geometria Molecular da Água"
+                      allowFullScreen
+                    ></iframe>
+                  </div>
+                  <p>
+                    Assista para entender visualmente como esses átomos se
+                    organizam no espaço!
+                  </p>
+                </div>
+              )}
+
+              {/* Seção de Feedback Visual/Mensagem */}
+              <div className={styles.congratsSection}>
+                <h3
+                  className={
+                    isCorrect ? styles.titleSuccess : styles.titleError
+                  }
+                >
+                  {isCorrect ? "Parabéns!" : "Vamos com calma"}
+                </h3>
+                <p>
+                  {isCorrect
+                    ? "Isso mostra que você compreendeu bem o conteúdo apresentado. Você conseguiu conectar as ideias com calma e atenção."
+                    : "Errar faz parte do processo de aprender. Analise a resolução e a recomendação de estudo acima para entender o conceito e tente novamente!"}
+                </p>
+              </div>
+
+              {/* Botão Dinâmico: Finalizar ou Tentar Novamente */}
+              {isCorrect ? (
+                <button
+                  onClick={() => navigate("/home")}
+                  className={styles.responderBtn}
+                >
+                  Finalizar
+                </button>
+              ) : (
+                <button onClick={handleTryAgain} className={styles.tryAgainBtn}>
+                  <RotateCcw size={18} /> Tentar novamente
+                </button>
+              )}
             </div>
           )}
         </section>
