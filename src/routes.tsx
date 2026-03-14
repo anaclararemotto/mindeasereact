@@ -1,5 +1,6 @@
 // src/main/routes/routes.tsx
 import App from '@app/App';
+import Content from '@presentation/pages/content/content';
 import Home from '@presentation/pages/home/home';
 import Login from '@presentation/pages/login/login';
 import Signup from '@presentation/pages/signup/signup';
@@ -23,5 +24,9 @@ export const router = createBrowserRouter([
   {
     path: "/home",
     element: <Home/>
+  },
+  {
+    path: "/content",
+    element: <Content/>
   },
 ]);
