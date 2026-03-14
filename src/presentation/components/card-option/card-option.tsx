@@ -29,7 +29,7 @@ export function CardOption({
 
   if (to) {
     return (
-      <Link to={to} >
+      <Link className={styles["card"]} to={to} >
         {content}
       </Link>
     );
