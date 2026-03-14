@@ -12,7 +12,7 @@ export type Subject =
   | "ingles"
   | "espanhol";
 
-export type CardMatters {
+export type CardMatters = {
   icon?: LucideIcon;
   title: string;
   to?: string;
