@@ -1,5 +1,5 @@
 import React from 'react';
-import { Home, User, BookOpen, Settings, LogOut, LibraryBig } from 'lucide-react';
+import { Home, User, BookOpen, LogOut, LibraryBig } from 'lucide-react';
 import styles from './sidebar.styles.module.scss';
 
 interface SidebarProps {
