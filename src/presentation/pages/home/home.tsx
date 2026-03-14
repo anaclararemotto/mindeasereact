@@ -2,10 +2,12 @@ import { CardOption } from "@presentation/components/card-option/card-option";
 import { ContinueStudyingCard } from "@presentation/components/continue-studying-card/continue-studying-card";
 import { Header } from "@presentation/components/header/header";
 import { CalendarDays, Goal } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import HomeIllustration from "../../../assets/home-image.svg";
 import styles from "./home.styles.module.scss"
 
 function Home() {
+    const navigate = useNavigate();
     const isNewUser = true;
     const mockData = {
         videoId: "aqz-KE-bpKQ",
@@ -35,7 +37,7 @@ function Home() {
                     onClick={() => console.log("Card clicado!")}
                 />
                 <CardOption label="Cronograma do dia" icon={CalendarDays} />
-                <CardOption label="Desafio de hoje" icon={Goal} />
+                <CardOption label="Desafio de hoje" icon={Goal} onClick={() => navigate("/challenge")}/>
             </main>
         </>
     );
