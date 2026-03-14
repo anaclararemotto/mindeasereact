@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Menu, X } from 'lucide-react';
-import { Sidebar } from '../sidebar/sidebar'; // Ajuste o caminho
+import { Menu } from 'lucide-react';
+import { Sidebar } from '../sidebar/sidebar';
 import styles from './header.styles.module.scss';
 
 export const Header: React.FC = () => {
