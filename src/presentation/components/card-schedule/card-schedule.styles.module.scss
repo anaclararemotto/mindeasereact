@@ -1,0 +1,39 @@
+@use "../../../app/styles/mixins" as *;
+@use "../../../app/styles/abstract/variables" as *;
+
+.card {
+    background-color: var(--color-background);
+    border: 2px solid $gray200;
+    border-radius: 16px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+     min-width: 200px;
+  width: 200px;
+   flex-shrink: 0;
+
+    &__inline {
+        display: flex;
+        gap: 30px;
+        text-align: start;
+        align-items: baseline;
+
+        &__hour {
+            @include text-headline;
+            color: var(--color-primary);
+        }
+
+        &__title {
+            @include text-body-small;
+            color: $gray300;
+        }
+
+        &__subtitle {
+            @include text-body-medium;
+            color: var(--text-color);
+        }
+    }
+
+   
+}

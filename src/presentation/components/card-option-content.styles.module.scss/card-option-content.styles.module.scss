@@ -1,0 +1,33 @@
+@use "../../../app/styles/mixins" as *;
+@use "../../../app/styles/abstract/variables" as *;
+
+.card{
+    background-color: $gray200;
+    padding: 18px 14px;
+    border-radius: 16px;
+    border: none;
+    cursor: pointer;
+    &__container{
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        text-decoration: none;
+        &__color{
+            color: var(--color-title-alternative)
+        }
+        &__title{
+            @include text-subheadline;
+            color: var(--color-title-alternative)
+            
+        }
+        &__subtitle{
+            @include text-body-large;
+            color: var(--color-title-alternative)
+        }
+    }
+
+    &:hover{
+        opacity: 70%;
+    }
+}
+
