@@ -1,6 +1,6 @@
 @use "./styles/mixins" as *;
-@use "./styles/abstract/_variables" as *;
-@use "./styles/abstract/_theme" as *;
+@use "./styles/abstract/variables" as *;
+@use "./styles/abstract/theme" as *;
 
 .header {
   @include header;
