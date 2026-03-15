@@ -7,6 +7,7 @@ import Login from '@presentation/pages/login/login';
 import Matters from '@presentation/pages/matters/matters';
 import Profile from '@presentation/pages/profile/profile';
 import Signup from '@presentation/pages/signup/signup';
+import Timer from "@presentation/pages/timer/timer";
 import { createBrowserRouter } from 'react-router-dom';
 
 export const router = createBrowserRouter([
@@ -16,34 +17,38 @@ export const router = createBrowserRouter([
   },
   {
     path: "/login",
-    element: <Login/>
+    element: <Login />,
   },
   {
     path: "/signup",
-    element: <Signup />
+    element: <Signup />,
   },
   {
     path: "/home",
-    element: <Home/>
+    element: <Home />,
   },
   {
     path: "/matters",
-    element: <Matters/>
+    element: <Matters />,
   },
   {
     path: "/content",
-    element: <Content/>
+    element: <Content />,
   },
   {
     path: "/challenge",
-    element: <Challenge />
+    element: <Challenge />,
   },
   {
-     path: "/profile",
-    element: <Profile/>
+    path: "/profile",
+    element: <Profile />,
   },
   {
      path: "/forgot-password",
     element: <ForgotPassword/>
+  },
+ {
+    path: "/timer",
+    element: <Timer />,
   },
 ]);

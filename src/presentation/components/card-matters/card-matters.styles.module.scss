@@ -12,11 +12,9 @@
     background-color: var(--card-bg, $color-background);
 }
 
-.container-content{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
+.container-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
 }
-
-

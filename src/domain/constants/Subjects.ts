@@ -1,0 +1,18 @@
+export const SCHOOL_SUBJECTS = [
+  { value: "portuguese", label: "Português" },
+  { value: "math", label: "Matemática" },
+  { value: "history", label: "História" },
+  { value: "geography", label: "Geografia" },
+  { value: "physics", label: "Física" },
+  { value: "chemistry", label: "Química" },
+  { value: "biology", label: "Biologia" },
+  { value: "english", label: "Inglês" },
+  { value: "spanish", label: "Espanhol" },
+  { value: "philosophy", label: "Filosofia" },
+  { value: "sociology", label: "Sociologia" },
+  { value: "arts", label: "Artes" },
+  { value: "physical_education", label: "Educação Física" },
+  { value: "literature", label: "Literatura" },
+  { value: "writing", label: "Redação" },
+  { value: "informatics", label: "Informática" },
+];
