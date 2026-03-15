@@ -7,4 +7,17 @@
     flex-direction: column;
     gap: 10px;
     @include body-primary;
+
+    &__back-button{
+        background-color: transparent;
+        border: none;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+
+    &__card-wrapper{
+        margin-bottom: 15px;
+    }
+
 }
