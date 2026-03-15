@@ -14,7 +14,7 @@ const mockQuestion = {
     { id: "c", text: "Apenas hidrogênio" },
     { id: "d", text: "Apenas oxigênio" },
   ],
-  correctAnswer: "a", // A opção A é a correta
+  correctAnswer: "a",
 };
 
 function Challenge() {
@@ -96,7 +96,7 @@ function Challenge() {
                       className={styles.radioInput}
                     />
                     <span className={styles.optionContent}>
-                      {String.fromCharCode(97 + index)}) {opt.text}
+                      {String.fromCharCode(97 + index)} {opt.text}
                     </span>
                   </label>
                 ))}
