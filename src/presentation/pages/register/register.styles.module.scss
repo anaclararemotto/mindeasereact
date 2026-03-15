@@ -3,19 +3,19 @@
 @use "../../../app/styles/abstract/theme" as *;
 
 .container {
-    @include body; // Padding: 90px 30px
+    @include body;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 32px; // Gap levemente reduzido para acomodar mais campos
+    gap: 32px; 
     min-height: 100vh;
     width: 100%;
     margin: 0 auto;
 
     @include responsive(md) {
         gap: 48px;
-        max-width: 520px; // Um pouco mais largo que o login por causa dos campos de data
+        max-width: 520px; 
     }
 
     &__brand {
@@ -42,7 +42,6 @@
         flex-direction: column;
         gap: 16px;
 
-        // Estilo específico para o botão de ação principal dentro do bloco de inputs
         button {
             margin-top: 12px;
         }
