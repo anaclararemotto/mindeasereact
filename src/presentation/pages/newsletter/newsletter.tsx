@@ -1,5 +1,5 @@
 import { Header } from "@presentation/components/header/header";
-import { BookOpen, Lightbulb, Map, PenTool, Brain, Quote, Info } from "lucide-react";
+import { BookOpen, Lightbulb, Map, PenTool, Brain, Quote } from "lucide-react";
 import styles from "./newsletter.styles.module.scss";
 
 export function Newsletter() {
