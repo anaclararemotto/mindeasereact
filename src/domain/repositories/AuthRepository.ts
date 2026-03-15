@@ -7,4 +7,6 @@ export interface AuthRepository {
     email: string;
     password: string;
   }): Promise<void>;
+
+  sendPasswordReset(email: string): Promise<void>;
 }

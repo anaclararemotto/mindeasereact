@@ -1,4 +1,8 @@
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import {
+  createUserWithEmailAndPassword,
+  sendPasswordResetEmail,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
 import { auth, db } from "./firebaseConfig";
 import type { AuthRepository } from "@domain/repositories/AuthRepository";
 import { doc, setDoc } from "firebase/firestore";
@@ -33,5 +37,9 @@ export class FirebaseAuthRepository implements AuthRepository {
       email,
       createdAt: new Date(),
     });
+  }
+
+  async sendPasswordReset(email: string): Promise<void> {
+    await sendPasswordResetEmail(auth, email);
   }
 }
