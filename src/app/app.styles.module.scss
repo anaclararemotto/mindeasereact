@@ -1,9 +1,9 @@
-@use "./styles/mixins" as mixins;
+@use "./styles/_mixins" as mixins;
 @use "./styles/abstract/variables" as *;
 @use "./styles/abstract/theme" as *;
 
 .header {
-  @include mixins.header; 
+  @include mixins.header;
   border-bottom: 1px solid $gray200;
   box-shadow: $shadow-sm;
   width: 100%;
@@ -26,9 +26,9 @@
 
   img {
     width: 100%;
-    max-width: 400px; 
+    max-width: 400px;
     height: auto;
-    
+
     @include mixins.responsive(md) {
       max-width: 600px;
     }
@@ -43,7 +43,7 @@
     &__title {
       @include mixins.text-headline;
       color: var(--color-title-alternative);
-      
+
       @include mixins.responsive(md) {
         @include mixins.text-display;
       }
@@ -88,11 +88,11 @@
       &__line-subject {
         width: 100%;
         display: grid;
-        grid-template-columns: 1fr 1fr; 
+        grid-template-columns: 1fr 1fr;
         gap: 16px;
 
         @include mixins.responsive(lg) {
-          grid-template-columns: repeat(4, 1fr); 
+          grid-template-columns: repeat(4, 1fr);
         }
       }
     }
@@ -150,7 +150,9 @@
         color: $black;
         text-decoration: none;
         @include mixins.text-body-medium;
-        &:hover { text-decoration: underline; }
+        &:hover {
+          text-decoration: underline;
+        }
       }
 
       p {
