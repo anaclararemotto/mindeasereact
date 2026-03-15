@@ -59,7 +59,7 @@ function Login() {
       </div>
 
       <div className={styles["container__buttons"]}>
-        <Button label="Esqueci minha senha" transparent />
+        <Button label="Esqueci minha senha" transparent  to="/forgot-password"/>
         <Button
           label="Ainda não possui uma conta? Cadastre-se"
           transparent

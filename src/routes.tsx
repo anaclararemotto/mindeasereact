@@ -1,6 +1,7 @@
 import App from '@app/App';
 import Challenge from '@presentation/pages/challenge/challenge';
 import Content from '@presentation/pages/content/content';
+import ForgotPassword from '@presentation/pages/forgot-password/forgot-password';
 import Home from '@presentation/pages/home/home';
 import Login from '@presentation/pages/login/login';
 import Matters from '@presentation/pages/matters/matters';
@@ -40,5 +41,9 @@ export const router = createBrowserRouter([
   {
      path: "/profile",
     element: <Profile/>
+  },
+  {
+     path: "/forgot-password",
+    element: <ForgotPassword/>
   },
 ]);
