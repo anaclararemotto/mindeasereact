@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import App from "@app/App";
 import Challenge from "@presentation/pages/challenge/challenge";
 import Content from "@presentation/pages/content/content";
@@ -6,24 +5,12 @@ import ForgotPassword from "@presentation/pages/forgot-password/forgot-password"
 import Home from "@presentation/pages/home/home";
 import Login from "@presentation/pages/login/login";
 import Matters from "@presentation/pages/matters/matters";
+import { Newsletter } from "@presentation/pages/newsletter/newsletter";
 import Profile from "@presentation/pages/profile/profile";
 import Signup from "@presentation/pages/signup/signup";
 import Timer from "@presentation/pages/timer/timer";
-import { PrivateRoute } from "./privateRoute";
 import { createBrowserRouter } from "react-router-dom";
-import { Newsletter } from "@presentation/pages/newsletter/newsletter";
-=======
-import App from '@app/App';
-import Challenge from '@presentation/pages/challenge/challenge';
-import Content from '@presentation/pages/content/content';
-import Home from '@presentation/pages/home/home';
-import Login from '@presentation/pages/login/login';
-import { Newsletter } from '@presentation/pages/newsletter/newsletter';
-import Matters from '@presentation/pages/matters/matters';
-import Profile from '@presentation/pages/profile/profile';
-import Signup from '@presentation/pages/signup/signup';
-import { createBrowserRouter } from 'react-router-dom';
->>>>>>> 4ca44a8cec963348c05f4837d06b1d6a0dcec783
+import { PrivateRoute } from "./privateRoute";
 
 export const router = createBrowserRouter([
   {
@@ -84,7 +71,10 @@ export const router = createBrowserRouter([
   },
   {
      path: "/newsletter",
-    element: <Newsletter/>
+      element:
+     <PrivateRoute>
+    <Newsletter/>
+    </PrivateRoute>
   },
 {
       path: "/timer",
