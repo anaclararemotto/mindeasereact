@@ -5,27 +5,32 @@
 .container {
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    @include body-primary;
+    gap: 24px; 
+    @include body-primary; 
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
 
     &__inline-container {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+        @include flex-between; 
+        width: 100%;
 
         &__column {
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 4px;
 
             &__inline {
                 display: flex;
                 align-items: center;
-                gap: 10px;
+                gap: 8px;
 
                 &__title {
                     color: $color-title;
-                    @include text-subheadline
+                    @include text-subheadline;
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
                 }
             }
 
@@ -34,19 +39,57 @@
                 color: var(--text-color);
             }
         }
+
+        a {
+            color: var(--color-primary);
+            transition: transform 0.2s;
+            &:hover { transform: translateX(4px); }
+        }
     }
 
     &__carouselContainer {
-  width: 100%;
- overflow-x: auto;
-  scroll-snap-type: x mandatory;
+        width: 100%;
+        margin: 0 -30px; 
+        padding: 0 30px; 
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch; 
+        
+        
+        &::-webkit-scrollbar { display: none; }
+        -ms-overflow-style: none;
+        scrollbar-width: none;
 
+        &__carouselContent {
+            display: flex;
+            gap: 16px;
+            padding-bottom: 8px; 
 
-&__carouselContent {
-  display: flex;
-  gap: 16px;
-  flex-wrap: nowrap;
-}
-}
-    
+            
+            & > * {
+                flex: 0 0 auto;
+                scroll-snap-align: start;
+            }
+        }
+    }
+
+    & > :global(.card-option) { 
+        width: 100%;
+    }
+
+    @include responsive(md) {
+        gap: 40px;
+        
+        &__carouselContainer {
+            margin: 0;
+            padding: 0;
+            overflow-x: visible; 
+
+            &__carouselContent {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                flex-wrap: wrap;
+            }
+        }
+    }
 }
