@@ -6,4 +6,5 @@ export type CardOptionProps = {
   href?: string;
   icon?: LucideIcon;
   disabled?: boolean;
+  onClick?: () => void;
 };

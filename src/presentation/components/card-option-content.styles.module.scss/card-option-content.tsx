@@ -6,10 +6,11 @@ export function CardOption({
   description,
   href,
   icon: Icon,
+  onClick
 }: CardOptionProps) {
   
   return (
-    <button className={styles["card"]}>
+    <button className={styles["card"]} onClick={onClick}>
       <a href={href} className={styles["card__container"]}  >
         {Icon && <Icon size={24} className={styles["card__container__color"]} />}
         <p className={styles["card__container__title"]}>{label }</p>
