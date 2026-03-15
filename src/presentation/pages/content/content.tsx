@@ -29,7 +29,7 @@ function Content() {
                 </div>
                 <CardOption icon={LibraryBig} label="Conteúdo" href="/matters" description="Escolha o conteúdo e avance no estudo."/>
                 <CardOption icon={Hourglass} label="Timer/Modo Foco" description="Hora de focar e estudar com intenção."/>
-                <CardOption icon={Newspaper} label="Newsletter" description="Fique por dentro das atualidades."/>
+                <CardOption icon={Newspaper} label="Newsletter" href="/newsletter" description="Fique por dentro das atualidades."/>
             </main>
         </>
     );

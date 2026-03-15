@@ -3,6 +3,7 @@ import Challenge from '@presentation/pages/challenge/challenge';
 import Content from '@presentation/pages/content/content';
 import Home from '@presentation/pages/home/home';
 import Login from '@presentation/pages/login/login';
+import { Newsletter } from '@presentation/pages/newsletter/newsletter';
 import Profile from '@presentation/pages/profile/profile';
 import Signup from '@presentation/pages/signup/signup';
 import { createBrowserRouter } from 'react-router-dom';
@@ -37,5 +38,9 @@ export const router = createBrowserRouter([
   {
      path: "/profile",
     element: <Profile/>
+  },
+  {
+     path: "/newsletter",
+    element: <Newsletter/>
   },
 ]);
