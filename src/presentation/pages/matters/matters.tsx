@@ -10,7 +10,6 @@ function Matters() {
     const [selectedMatter, setSelectedMatter] = useState<any>(null);
     const [selectedLesson, setSelectedLesson] = useState<any>(null);
 
-    // Função para voltar um nível
     const handleBack = () => {
         if (selectedLesson) {
             setSelectedLesson(null);
@@ -19,12 +18,10 @@ function Matters() {
         }
     };
 
-    // Se houver uma aula selecionada, renderiza o detalhe
     if (selectedLesson) {
         return <LessonDetails data={selectedLesson} onBack={handleBack} />;
     }
 
-    // Define se exibe a lista principal ou as submatérias
     const currentItems = selectedMatter ? selectedMatter.submatters : MATTERS_MOCK;
 
     return (
