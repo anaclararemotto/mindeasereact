@@ -1,0 +1,52 @@
+@use "../../../app/styles/mixins" as *;
+@use "../../../app/styles/abstract/variables" as *;
+@use "../../../app/styles/abstract/theme" as *;
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    @include body-primary;
+
+    &__inline-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &__column {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            &__inline {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+
+                &__title {
+                    color: $color-title;
+                    @include text-subheadline
+                }
+            }
+
+            &__subtitle {
+                @include text-body-medium;
+                color: var(--text-color);
+            }
+        }
+    }
+
+    &__carouselContainer {
+  width: 100%;
+ overflow-x: auto;
+  scroll-snap-type: x mandatory;
+
+
+&__carouselContent {
+  display: flex;
+  gap: 16px;
+  flex-wrap: nowrap;
+}
+}
+    
+}

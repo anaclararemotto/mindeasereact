@@ -1,73 +1,52 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# 🌐 MindEase
 
-Currently, two official plugins are available:
+O MindEase é uma plataforma de estudos focada em acessibilidade cognitiva e emocional. Ela foi criada para estudantes que enfrentam desafios como TDAH, TEA, dislexia, ansiedade, burnout, dificuldades de foco e sobrecarga sensorial.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Diferente de plataformas tradicionais, o MindEase prioriza a **simplicidade, previsibilidade visual e personalização**, reduzindo estímulos desnecessários e respeitando diferentes ritmos de aprendizagem.
 
-## React Compiler
+A proposta central é transformar o estudo em uma experiência mais leve, organizada e possível de sustentar no dia a dia.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🎯 Objetivos
+- Apoiar a constância sem pressão.
+- Reduzir o atrito cognitivo.
+- Facilitar o retorno ao foco.
 
-## Expanding the ESLint configuration
+## 🎨 Diretrizes de UI/UX
+- Layout limpo e espaçado.
+- Tipografia legível.
+- Feedback visual claro.
+- Navegação simples.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🖥️ Principais funcionalidades
+- Desafios diários para incentivar a constância.
+- Conteúdos educacionais em vídeo e e-book.
+- Flashcards para reforço de memória.
+- To-do list para organização de tarefas.
+- Páginas de anotações vinculadas às aulas.
+- Newsletter com lembretes e conteudos sobre a atualidade.
+- Personalização de cores e temas.
+- Organização de matérias por categorias.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🛠️ Stack
+- Next.js
+- SCSS
+- Lucide Icons
+- Design System próprio
+- Consome a MindEase API
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 🔐 Autenticação
+-
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## ⚙️ Variáveis de ambiente
+- Crie um arquivo .env
+- Adicione as variáveis de ambiente enviadas por .txt
+
+## ▶️ Instalação e execução
+
+```
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```

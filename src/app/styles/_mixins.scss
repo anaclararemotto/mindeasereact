@@ -48,6 +48,9 @@ $breakpoints: (
 @mixin body {
   padding: 90px 30px;
 }
+@mixin body-primary {
+  padding: 30px 30px;
+}
 
 /* =========================
    TYPOGRAPHY MIXINS

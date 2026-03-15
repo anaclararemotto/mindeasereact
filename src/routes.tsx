@@ -1,22 +1,44 @@
-// src/main/routes/routes.tsx
 import App from '@app/App';
+import Challenge from '@presentation/pages/challenge/challenge';
+import Content from '@presentation/pages/content/content';
+import Home from '@presentation/pages/home/home';
 import Login from '@presentation/pages/login/login';
-import Register from '@presentation/pages/register/register';
+import Matters from '@presentation/pages/matters/matters';
+import Profile from '@presentation/pages/profile/profile';
+import Signup from '@presentation/pages/signup/signup';
 import { createBrowserRouter } from 'react-router-dom';
-// Importe suas páginas/templates aqui
-// import { LoginPage } from '@/presentation/pages/login'; 
 
 export const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />, // Sua home ou layout principal
+    element: <App />,
   },
   {
     path: "/login",
     element: <Login/>
   },
   {
-    path: "/register",
-    element: <Register/>
+    path: "/signup",
+    element: <Signup />
+  },
+  {
+    path: "/home",
+    element: <Home/>
+  },
+  {
+    path: "/matters",
+    element: <Matters/>
+  },
+  {
+    path: "/content",
+    element: <Content/>
+  },
+  {
+    path: "/challenge",
+    element: <Challenge />
+  },
+  {
+     path: "/profile",
+    element: <Profile/>
   },
 ]);

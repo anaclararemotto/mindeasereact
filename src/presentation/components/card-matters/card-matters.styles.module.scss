@@ -1,0 +1,21 @@
+@use "../../../app/styles/mixins" as *;
+@use "../../../app/styles/abstract/variables" as *;
+
+.card-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 12px;
+    border-radius: 16px;
+    border: none;
+    background-color: var(--card-bg, $color-background);
+}
+
+.container-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+
