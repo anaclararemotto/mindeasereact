@@ -9,4 +9,9 @@ export interface AuthRepository {
   }): Promise<void>;
 
   sendPasswordReset(email: string): Promise<void>;
+
+  getToken(): Promise<string | null>;
+  saveToken(token: string): void;
+  getStoredToken(): string | null;
+  clearToken(): void;
 }

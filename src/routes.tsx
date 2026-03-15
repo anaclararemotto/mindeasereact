@@ -1,14 +1,15 @@
-import App from '@app/App';
-import Challenge from '@presentation/pages/challenge/challenge';
-import Content from '@presentation/pages/content/content';
-import ForgotPassword from '@presentation/pages/forgot-password/forgot-password';
-import Home from '@presentation/pages/home/home';
-import Login from '@presentation/pages/login/login';
-import Matters from '@presentation/pages/matters/matters';
-import Profile from '@presentation/pages/profile/profile';
-import Signup from '@presentation/pages/signup/signup';
+import App from "@app/App";
+import Challenge from "@presentation/pages/challenge/challenge";
+import Content from "@presentation/pages/content/content";
+import ForgotPassword from "@presentation/pages/forgot-password/forgot-password";
+import Home from "@presentation/pages/home/home";
+import Login from "@presentation/pages/login/login";
+import Matters from "@presentation/pages/matters/matters";
+import Profile from "@presentation/pages/profile/profile";
+import Signup from "@presentation/pages/signup/signup";
 import Timer from "@presentation/pages/timer/timer";
-import { createBrowserRouter } from 'react-router-dom';
+import { PrivateRoute } from "./privateRoute";
+import { createBrowserRouter } from "react-router-dom";
 
 export const router = createBrowserRouter([
   {
@@ -24,31 +25,55 @@ export const router = createBrowserRouter([
     element: <Signup />,
   },
   {
+    path: "/forgot-password",
+    element: <ForgotPassword />,
+  },
+  {
     path: "/home",
-    element: <Home />,
+    element: (
+      <PrivateRoute>
+        <Home />
+      </PrivateRoute>
+    ),
   },
   {
     path: "/matters",
-    element: <Matters />,
+    element: (
+      <PrivateRoute>
+        <Matters />
+      </PrivateRoute>
+    ),
   },
   {
     path: "/content",
-    element: <Content />,
+    element: (
+      <PrivateRoute>
+        <Content />
+      </PrivateRoute>
+    ),
   },
   {
     path: "/challenge",
-    element: <Challenge />,
+    element: (
+      <PrivateRoute>
+        <Challenge />
+      </PrivateRoute>
+    ),
   },
   {
     path: "/profile",
-    element: <Profile />,
+    element: (
+      <PrivateRoute>
+        <Profile />
+      </PrivateRoute>
+    ),
   },
   {
-     path: "/forgot-password",
-    element: <ForgotPassword/>
-  },
- {
     path: "/timer",
-    element: <Timer />,
+    element: (
+      <PrivateRoute>
+        <Timer />
+      </PrivateRoute>
+    ),
   },
 ]);

@@ -4,11 +4,11 @@ import { useNavigate } from "react-router-dom";
 import { Button } from "@presentation/components/button/button";
 import { Input } from "@presentation/components/input/input";
 
-
 import styles from "./login.styles.module.scss";
 import { AUTH_ERRORS } from "@domain/constants/AuthErrors";
 import { FirebaseAuthRepository } from "../../../infrastructure/firebase/FirebaseAuthRepository";
 import { LoginUseCase } from "../../../application/usecases/LoginUseCase";
+import { SaveAuthToken } from "../../../application/usecases/SaveAuthTokenUseCase";
 
 function Login() {
   const navigate = useNavigate();
@@ -18,10 +18,12 @@ function Login() {
 
   const authRepository = new FirebaseAuthRepository();
   const loginUseCase = new LoginUseCase(authRepository);
+  const saveAuthToken = new SaveAuthToken(authRepository);
 
   const handleLogin = async () => {
     try {
       await loginUseCase.execute(email, password);
+      await saveAuthToken.execute();
       navigate("/home");
     } catch (error: any) {
       if (error.message === AUTH_ERRORS.EMAIL_PASSWORD_REQUIRED) {
@@ -59,7 +61,7 @@ function Login() {
       </div>
 
       <div className={styles["container__buttons"]}>
-        <Button label="Esqueci minha senha" transparent  to="/forgot-password"/>
+        <Button label="Esqueci minha senha" transparent to="/forgot-password" />
         <Button
           label="Ainda não possui uma conta? Cadastre-se"
           transparent
