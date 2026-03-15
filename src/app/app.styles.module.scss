@@ -1,15 +1,15 @@
-@use "./styles/_mixins" as mixins;
-@use "./styles/abstract/variables" as *;
-@use "./styles/abstract/theme" as *;
+@use "./styles/_mixins" as *;
+@use "./styles/abstract/_variables" as *;
+@use "./styles/abstract/_theme" as *;
 
 .header {
-  @include mixins.header;
+  @include header;
   border-bottom: 1px solid $gray200;
   box-shadow: $shadow-sm;
   width: 100%;
 
   &__brand {
-    @include mixins.text-display;
+    @include text-display;
     color: var(--color-primary);
   }
 }
@@ -29,7 +29,7 @@
     max-width: 400px;
     height: auto;
 
-    @include mixins.responsive(md) {
+    @include responsive(md) {
       max-width: 600px;
     }
   }
@@ -41,16 +41,16 @@
     width: 100%;
 
     &__title {
-      @include mixins.text-headline;
+      @include text-headline;
       color: var(--color-title-alternative);
 
-      @include mixins.responsive(md) {
-        @include mixins.text-display;
+      @include responsive(md) {
+        @include text-display;
       }
     }
 
     &__paragraph {
-      @include mixins.text-body-large;
+      @include text-body-large;
       max-width: 800px;
 
       &__bold {
@@ -60,7 +60,7 @@
     }
 
     &__subtitle {
-      @include mixins.text-subheadline;
+      @include text-subheadline;
       color: var(--color-title-alternative);
       margin-top: 10px;
     }
@@ -91,7 +91,7 @@
         grid-template-columns: 1fr 1fr;
         gap: 16px;
 
-        @include mixins.responsive(lg) {
+        @include responsive(lg) {
           grid-template-columns: repeat(4, 1fr);
         }
       }
@@ -108,7 +108,7 @@
       }
 
       &__title {
-        @include mixins.text-headline;
+        @include text-headline;
         color: var(--color-title-alternative);
       }
     }
@@ -125,7 +125,7 @@
   width: 100%;
 
   &__brand {
-    @include mixins.text-subtitle;
+    @include text-subtitle;
     color: var(--color-primary);
   }
 
@@ -136,7 +136,7 @@
     gap: 30px;
     max-width: 1000px;
 
-    @include mixins.responsive(md) {
+    @include responsive(md) {
       flex-direction: row;
       justify-content: space-between;
     }
@@ -149,14 +149,14 @@
       &__link {
         color: $black;
         text-decoration: none;
-        @include mixins.text-body-medium;
+        @include text-body-medium;
         &:hover {
           text-decoration: underline;
         }
       }
 
       p {
-        @include mixins.text-body-medium;
+        @include text-body-medium;
       }
 
       &__bold {
