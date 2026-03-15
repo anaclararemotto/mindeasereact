@@ -5,11 +5,12 @@ import ForgotPassword from "@presentation/pages/forgot-password/forgot-password"
 import Home from "@presentation/pages/home/home";
 import Login from "@presentation/pages/login/login";
 import Matters from "@presentation/pages/matters/matters";
+import { Newsletter } from "@presentation/pages/newsletter/newsletter";
 import Profile from "@presentation/pages/profile/profile";
 import Signup from "@presentation/pages/signup/signup";
 import Timer from "@presentation/pages/timer/timer";
-import { PrivateRoute } from "./privateRoute";
 import { createBrowserRouter } from "react-router-dom";
+import { PrivateRoute } from "./privateRoute";
 
 export const router = createBrowserRouter([
   {
@@ -69,7 +70,14 @@ export const router = createBrowserRouter([
     ),
   },
   {
-    path: "/timer",
+     path: "/newsletter",
+      element:
+     <PrivateRoute>
+    <Newsletter/>
+    </PrivateRoute>
+  },
+{
+      path: "/timer",
     element: (
       <PrivateRoute>
         <Timer />
